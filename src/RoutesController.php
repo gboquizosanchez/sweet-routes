@@ -3,8 +3,8 @@
 namespace Sweet;
 
 use Closure;
-use Illuminate\View\View;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\View;
 
 class RoutesController
 {
