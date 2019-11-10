@@ -1,10 +1,10 @@
 <?php
 
-namespace Sweet;
+namespace Sweet\Routes;
 
 use Closure;
-use Illuminate\View\View;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\View;
 
 class RoutesController
 {
@@ -15,14 +15,14 @@ class RoutesController
      */
     public function __invoke()
     {
-        $middlewareClosure = function ($middleware) {
+        $middlewareClosure = static function ($middleware) {
             return $middleware instanceof Closure ? 'Closure' : $middleware;
         };
 
         $routes = collect(Route::getRoutes());
 
         foreach (config('sweet-routes.hide_matching') as $regex) {
-            $routes = $routes->filter(function ($value) use ($regex) {
+            $routes = $routes->filter(static function ($value) use ($regex) {
                 return !preg_match($regex, $value->uri());
             });
         }

@@ -17,14 +17,14 @@
     ],
     "autoload": {
         "psr-4": {
-            "Sweet\\": "src"
+            "Sweet\\Routes\\": "src"
         }
     },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
-                "Sweet\\ServiceProvider"
+                "Sweet\\Routes\\ServiceProvider"
             ]
         }
     }

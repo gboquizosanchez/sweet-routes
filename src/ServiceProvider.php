@@ -1,6 +1,6 @@
 <?php
 
-namespace Sweet;
+namespace Sweet\Routes;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
@@ -26,10 +26,10 @@ class ServiceProvider extends IlluminateServiceProvider
 
         $this->publishes([
             __DIR__.'/../config.php' => config_path('sweet-routes.php'),
-        ]);
+        ], 'sweet-routes');
 
         Route::get(config('sweet-routes.url'), RoutesController::class)
             ->name(config('sweet-routes.name'))
-            ->middleware(config('sweet-routes.middlewares'));
+            ->middleware(config('sweet-routes.middleware'));
     }
 }
