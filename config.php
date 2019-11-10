@@ -74,6 +74,9 @@ return [
         '#^prequel#',
         '#^telescope#',
         '#^__clockwork#',
+        '#^paket#',
+        '#^_tt#',
+        '#^_ignition#',
     ],
 
     /*
