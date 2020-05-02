@@ -15,7 +15,8 @@ class ServiceProvider extends IlluminateServiceProvider
     public function boot(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config.php', 'sweet-routes'
+            __DIR__.'/../config.php',
+            'sweet-routes'
         );
 
         if (config('sweet-routes.debug_only', true) && empty(config('app.debug'))) {
